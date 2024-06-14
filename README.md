@@ -9,19 +9,40 @@ Bem-vindo ao teste de contratação para a vaga de Desenvolvedor Back-End. Neste
 ```bash
 # Clone o projeto
 $ git clone https://github.com/guilherf13/teste-motocaSystems-backEnd.git
+```
 
 # Executando o ambiente
 
+```bash
 $ cd teste-motocaSystems-backEnd
+```
+```bash
 $ cd backend
+```
+```bash
 $ cp .env.example .env
+```
+```bash
 $ cd ../../
+```
+```bash
 $ sudo chmod -R 777 teste-motocaSystems-backEnd
+```
+```bash
 $ cd teste-motocaSystems-backEnd
+```
+```bash
 $ docker compose up -d --build
+```
+```bash
 $ docker exec -it backend composer install
+```
+```bash
 $ docker exec -it backend php artisan key:generate
+```
+```bash
 $ docker exec -it backend php artisan migrate
+```
 
 A documentação completa da API pode ser encontrada no link abaixo:
 

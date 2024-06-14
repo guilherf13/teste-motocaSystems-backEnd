@@ -1,176 +1,94 @@
-<div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Ambiente_de_desenvolvimentos_scs" />
+# 📝 Teste Motoca Systems - Desenvolvedor Back-End
 
-  &#xa0;
+## 📄 Descrição
 
-  <!-- <a href="https://ambiente_de_desenvolvimentos_scs.netlify.app">Demo</a> -->
-</div>
+Bem-vindo ao teste de contratação para a vaga de Desenvolvedor Back-End. Neste teste, você terá a oportunidade de demonstrar suas habilidades em **PHP** com o framework **Laravel** e **PostgreSQL** ao criar uma API CRUD baseada em um conjunto de requisitos.
 
-<h1 align="center">Desafio Técnico - Back-End Pleno</h1>
+## 📋 Instruções
 
-<p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/{{YOUR_GITHUB_USERNAME}}/ambiente_de_desenvolvimentos_scs?color=56BEB8">
+1. **Clone** este repositório para o seu ambiente local.
+2. Crie uma aplicação backend utilizando **Laravel**, seguindo as especificações fornecidas.
+3. Implemente as funcionalidades de **Criar**, **Ler**, **Atualizar** e **Deletar** para as entidades especificadas.
+4. Configure a aplicação para utilizar o banco de dados **PostgreSQL**.
+5. Utilize **Postman** para testar e documentar as suas APIs.
+6. Após completar o teste, crie um repositório no seu GitHub com o nome **`teste-motocaSystems-backEnd`** e suba o seu código para lá.
+7. Envie o link do seu repositório para nós (thalles@motoca.com.br / welliton@motoca.com.br).
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/{{YOUR_GITHUB_USERNAME}}/ambiente_de_desenvolvimentos_scs?color=56BEB8">
+## 📚 Requisitos
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{YOUR_GITHUB_USERNAME}}/ambiente_de_desenvolvimentos_scs?color=56BEB8">
+- Utilize **Laravel** para construir a aplicação.
+- Utilize **PostgreSQL** como banco de dados.
+- Implemente as operações de CRUD (Criar, Ler, Atualizar, Deletar) para duas entidades: "Produtos" e "Categorias".
+- Certifique-se de que a API esteja bem documentada utilizando o **Postman**.
+- A aplicação deve seguir boas práticas de desenvolvimento, incluindo a utilização de migrations, seeders, controllers, models e rotas organizadas.
 
-  <img alt="License" src="https://img.shields.io/github/license/{{YOUR_GITHUB_USERNAME}}/ambiente_de_desenvolvimentos_scs?color=56BEB8">
+## 🛠️ Funcionalidades
 
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/{{YOUR_GITHUB_USERNAME}}/ambiente_de_desenvolvimentos_scs?color=56BEB8" /> -->
+A aplicação deve incluir as seguintes operações CRUD para as entidades "Produtos" e "Categorias":
 
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/{{YOUR_GITHUB_USERNAME}}/ambiente_de_desenvolvimentos_scs?color=56BEB8" /> -->
+### Produtos
 
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/{{YOUR_GITHUB_USERNAME}}/ambiente_de_desenvolvimentos_scs?color=56BEB8" /> -->
-</p>
+1. **Criar Produto:**
+   - Rota: `POST /api/produtos`
+   - Payload: `{ "nome": "Nome do Produto", "descricao": "Descrição do Produto", "preco": 100.00, "categoria_id": 1 }`
+   
+2. **Ler Produtos:**
+   - Rota: `GET /api/produtos`
+   - Retorna uma lista de todos os produtos.
+   
+3. **Ler Produto por ID:**
+   - Rota: `GET /api/produtos/{id}`
+   - Retorna os detalhes de um produto específico.
+   
+4. **Atualizar Produto:**
+   - Rota: `PUT /api/produtos/{id}`
+   - Payload: `{ "nome": "Nome do Produto", "descricao": "Descrição do Produto", "preco": 150.00, "categoria_id": 2 }`
+   
+5. **Deletar Produto:**
+   - Rota: `DELETE /api/produtos/{id}`
+   - Deleta um produto específico.
 
-<!-- Status -->
+### Categorias
 
-<!-- <h4 align="center"> 
-	🚧  Ambiente_de_desenvolvimentos_scs 🚀 Under construction...  🚧
-</h4> 
+1. **Criar Categoria:**
+   - Rota: `POST /api/categorias`
+   - Payload: `{ "nome": "Nome da Categoria" }`
+   
+2. **Ler Categorias:**
+   - Rota: `GET /api/categorias`
+   - Retorna uma lista de todas as categorias.
+   
+3. **Ler Categoria por ID:**
+   - Rota: `GET /api/categorias/{id}`
+   - Retorna os detalhes de uma categoria específica.
+   
+4. **Atualizar Categoria:**
+   - Rota: `PUT /api/categorias/{id}`
+   - Payload: `{ "nome": "Nome da Categoria Atualizada" }`
+   
+5. **Deletar Categoria:**
+   - Rota: `DELETE /api/categorias/{id}`
+   - Deleta uma categoria específica.
 
-<hr> -->
+### Relacionamento Produto-Categoria
 
-<p align="center">
-  <a href="#dart-about">About</a> &#xa0; | &#xa0; 
-  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
-  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
-  <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">Author</a>
-</p>
+- Cada produto pertence a uma categoria (`categoria_id` como chave estrangeira na tabela `produtos`).
+- Cada categoria pode ter vários produtos.
 
-<br>
+## ⏰ Prazo
 
-## :dart: Sobre o Projeto ##
+Você tem até **17/06/2024 às 08:00 horas** para completar este teste a partir do momento em que o recebe. Será levado em consideração a qualidade e o tempo de entrega do teste.
 
-Crie um sistema de gestão bancária por meio de uma API, composta por dois endpoints:
-"/conta" e "/transacao". O endpoint "/conta" deve criar e fornecer informações sobre o número
-da conta e o saldo. O endpoint "/transacao" será responsável por realizar diversas operações
-financeiras..
+## 📦 Entrega
 
-## :rocket: Tecnologias ultilizadas ##
+1. Após completar o teste, crie um repositório no seu GitHub com o nome **`teste-motocaSystems-backEnd`**.
+2. Suba o código da aplicação para este repositório.
+3. Inclua qualquer documentação adicional que julgar necessária.
+4. Certifique-se de que o código está bem comentado e fácil de entender.
+5. Envie o link do repositório para nós (thalles@motoca.com.br / welliton@motoca.com.br).
 
-Ferramentas ultilizadas no projeto:
+## 📞 Contato
 
-- [Laravel](https://laravel.com/docs/10.x)
-- [Mysql](https://www.mysql.com/)
-- [Docker](https://www.docker.com/)
-- [MailHog](https://hub.docker.com/r/mailhog/mailhog/)
+Se você tiver qualquer dúvida durante o teste, sinta-se à vontade para entrar em contato conosco.
 
-## :white_check_mark: Requirements ##
-
-Para rodar o projeto, você vai precisar do docker [Docker](https://www.docker.com/).
-
-## :checkered_flag: Subindo o ambiente de desenvolvimento ##
-
-```bash
-# Clone o projeto
-$ git clone https://github.com/guilherf13/SCS_DevOps
-
-# Executando o ambiente
-
-$ cd desafio_tecnico_object
-$ cd backend
-$ cp .env.example .env
-$ cd ../../
-$ sudo chmod -R 777 desafio_tecnico_object
-$ cd desafio_tecnico_object
-$ docker compose up -d --build
-$ docker exec -it backend composer install
-$ docker exec -it backend php artisan key:generate
-$ docker exec -it backend php artisan migrate
-
-# Executando os testes
-
-$ docker exec -it backend php artisan test --filter TransferenciaTest
-
-# A aplicação esta rodando nas seguintes rotas:
-
-# laravel <http://localhost:80>
-# meilhog (http://localhost:8025>
-# mysql port 3306
-```
-## Documentação das APIs
-
-```http
-  POST /conta
-```
-#### Registra uma nova conta
-
-| Parâmetro   | Tipo       | Descrição                                   |
-| :---------- | :--------- | :------------------------------------------ |
-| `conta_id`  | Integer    | id da conta
-| `valor`     | Decimal    | Valor inicial do Saldo
-| **Rota:**   | URL http://localhost:80/api/conta
-
-Exemplo de payload:
-
-{
-    "conta_id": 30,
-    "valor": 500
-}
-
-Exemplo de response:
-
-{
-  "conta_id":30,
-  "saldo":"500"
-}
-
-```http
-  GET /conta/{conta_id}
-```
-#### Retorna os dados da conta
-
-| Parâmetro   | Tipo       | Descrição                                   |
-| :---------- | :--------- | :------------------------------------------ |
-| `conta_id`  | Integer    | id da conta
-| **Rota:**   | URL http://localhost:80/api/conta/{conta_id}
-
-Exemplo de response:
-
-{
-  "conta_id":30,
-  "saldo":"500.00"
-}
-
-```http
-  POST /transferencia
-```
-#### Realiza uma nova compra
-
-| Parâmetro         | Tipo       | Descrição                                   |
-| :----------       | :--------- | :------------------------------------------ |
-| `conta_id`        | Integer    | id da conta
-| `valor`           | Decimal    | Valor a ser pago
-| `forma_pagamento` | String     | Letra que corresponde ao tipo de pagamento. (Pix = P, Debito = D e Crédito = C).
-| **Rota:**   | URL http://localhost:80/api/transferencia
-
-Exemplo de payload:
-
-{
-    "conta_id": 30,
-    "valor": 100
-    "forma_pagamento": "P"
-}
-
-Exemplo de response:
-
-{
-  "conta_id":30,
-  "saldo":"400"
-}
-
-## :memo: License ##
-
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
-
-
-Made with :heart: by <a href="https://github.com/guilherf13" target="_blank">{{guilherme}}</a>
-
-&#xa0;
-
-<a href="#top">Back to top</a>
+Boa sorte! 🍀

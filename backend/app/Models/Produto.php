@@ -5,19 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Conta extends Model
+class Produto extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'conta_id';
-
     protected $fillable = [
-        'conta_id',
-        'saldo',
+        'nome',
+        'descricao',
+        'preco',
+        'categoria_id',
     ];
 
-    public function transferencias()
+    public function categoria()
     {
-        return $this->hasMany(Transferencia::class);
+        return $this->belongsTo(Categoria::class);
     }
 }

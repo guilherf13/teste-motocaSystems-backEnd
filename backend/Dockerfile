@@ -12,7 +12,7 @@ RUN apt-get update \
         libpq-dev \
         libzip-dev \
         && docker-php-ext-install -j$(nproc) zip \
-        && docker-php-ext-install -j$(nproc) pdo_mysql \
+        && docker-php-ext-install -j$(nproc) pdo_pgsql \
         && docker-php-ext-install -j$(nproc) bcmath
 
 # Clear cache

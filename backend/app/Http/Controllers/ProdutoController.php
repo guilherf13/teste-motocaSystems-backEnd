@@ -2,21 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProdutosRequest;
 use App\Models\Produto;
 use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
 {
-    public function store(Request $request)
+    public function store(ProdutosRequest $request)
     {
-        $validatedData = $request->validate([
-            'nome' => 'required|string|max:255',
-            'descricao' => 'nullable|string',
-            'preco' => 'required|numeric',
-            'categoria_id' => 'required|integer|exists:categorias,id',
-        ]);
-
-        $produto = Produto::create($validatedData);
+        $produto = Produto::create($request->all());
 
         return response()->json($produto, 201);
     }

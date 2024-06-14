@@ -4,23 +4,28 @@
 
 Bem-vindo ao teste de contratação para a vaga de Desenvolvedor Back-End. Neste teste, você terá a oportunidade de demonstrar suas habilidades em **PHP** com o framework **Laravel** e **PostgreSQL** ao criar uma API CRUD baseada em um conjunto de requisitos.
 
-## 📋 Instruções
+## :checkered_flag: Subindo o ambiente de desenvolvimento ##
 
-1. **Clone** este repositório para o seu ambiente local.
-2. Crie uma aplicação backend utilizando **Laravel**, seguindo as especificações fornecidas.
-3. Implemente as funcionalidades de **Criar**, **Ler**, **Atualizar** e **Deletar** para as entidades especificadas.
-4. Configure a aplicação para utilizar o banco de dados **PostgreSQL**.
-5. Utilize **Postman** para testar e documentar as suas APIs.
-6. Após completar o teste, crie um repositório no seu GitHub com o nome **`teste-motocaSystems-backEnd`** e suba o seu código para lá.
-7. Envie o link do seu repositório para nós (thalles@motoca.com.br / welliton@motoca.com.br).
+```bash
+# Clone o projeto
+$ git clone https://github.com/guilherf13/teste-motocaSystems-backEnd.git
 
-## 📚 Requisitos
+# Executando o ambiente
 
-- Utilize **Laravel** para construir a aplicação.
-- Utilize **PostgreSQL** como banco de dados.
-- Implemente as operações de CRUD (Criar, Ler, Atualizar, Deletar) para duas entidades: "Produtos" e "Categorias".
-- Certifique-se de que a API esteja bem documentada utilizando o **Postman**.
-- A aplicação deve seguir boas práticas de desenvolvimento, incluindo a utilização de migrations, seeders, controllers, models e rotas organizadas.
+$ cd teste-motocaSystems-backEnd
+$ cd backend
+$ cp .env.example .env
+$ cd ../../
+$ sudo chmod -R 777 teste-motocaSystems-backEnd
+$ cd teste-motocaSystems-backEnd
+$ docker compose up -d --build
+$ docker exec -it backend composer install
+$ docker exec -it backend php artisan key:generate
+$ docker exec -it backend php artisan migrate
+
+A documentação completa da API pode ser encontrada no link abaixo:
+
+[Documentação da API no Postman](https://documenter.getpostman.com/view/26874194/2sA3XQfLns)
 
 ## 🛠️ Funcionalidades
 
